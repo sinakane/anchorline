@@ -1,10 +1,12 @@
-<!-- logo: replace with <p align="center"><img src="docs/logo.png" width="260"></p> once available -->
+<p align="center">
+  <img src="docs/logo.png" alt="anchorline" width="380">
+</p>
 
-# anchorline
-
-[![tests](https://github.com/sinakane/anchorline/actions/workflows/tests.yml/badge.svg)](https://github.com/sinakane/anchorline/actions/workflows/tests.yml)
-[![python](https://img.shields.io/badge/python-%E2%89%A53.9-blue)](pyproject.toml)
-[![license: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+<p align="center">
+  <a href="https://github.com/sinakane/anchorline/actions/workflows/tests.yml"><img src="https://github.com/sinakane/anchorline/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/python-%E2%89%A53.9-blue" alt="python"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="license: MIT"></a>
+</p>
 
 **Anchor an AML signature or patient sample to the closest drug-perturbed cell lines, then rank the drugs tested in
 those lines by how they move the cells.**
