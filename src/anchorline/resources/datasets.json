@@ -1,0 +1,41 @@
+{
+  "repo": "sinakane/anchorline",
+  "tag": "data-v1",
+  "files": {
+    "query_reference.h5ad": {
+      "group": "atlas",
+      "size": 292059387,
+      "sha256": "fb04ebe96a33d8f5f66d4ec23e47bc3aa4b8c4c5bddb887d139550adccc47b6d"
+    },
+    "AML_drug_atlas_bulk.h5ad": {
+      "group": "atlas",
+      "size": 288923344,
+      "sha256": "0d4675878f123c4cf22ea06f8348fda9a2e075f940901b58e088c30d934774c2"
+    },
+    "drugs.tsv": {
+      "group": "atlas",
+      "size": 66256,
+      "sha256": "8a6c1f5ad8d59d0f129b5fa355621d83d2ceee02d108a3f535593bd7cc763464"
+    },
+    "cell_lines.tsv": {
+      "group": "atlas",
+      "size": 4698,
+      "sha256": "401cdb8f254dd8370babc36bfafe926ca988af9d200572af7fa1a59d5ca7b93b"
+    },
+    "beataml_demo.h5ad": {
+      "group": "demo",
+      "size": 5105956,
+      "sha256": "14805e82f518b1b92cd897b03ce188eae0dbc1e06b9a88498aecd448e68a2651"
+    },
+    "beataml_demo_expression.csv": {
+      "group": "demo",
+      "size": 7502754,
+      "sha256": "cf4c0d6e31815405664564d4a4bf1d778fbe6f510535847e17dd0f011db68816"
+    },
+    "beataml_demo_samples.csv": {
+      "group": "demo",
+      "size": 2768,
+      "sha256": "b9a2238c695628ad4440ca479b836e66ad16776c93587424e1fd62ff285ffafd"
+    }
+  }
+}

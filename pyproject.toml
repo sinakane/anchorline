@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anchorline"
+version = "0.1.0"
+description = "Anchor AML signatures or patient samples to the closest drug-perturbed cell lines and rank drugs by how they move them"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sina Kanannejad" }]
+requires-python = ">=3.9"
+keywords = ["AML", "leukemia", "drug repurposing", "transcriptomics", "cell lines", "perturbation", "single-cell"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = ["numpy", "pandas", "anndata>=0.8", "matplotlib>=3.5", "scipy"]
+
+[project.optional-dependencies]
+labels = ["adjustText"]
+excel = ["openpyxl"]
+notebooks = ["jupyter", "adjustText"]
+dev = ["pytest", "nbformat", "nbconvert", "ipykernel"]
+
+[project.scripts]
+anchorline-download = "anchorline.datasets:main"
+
+[project.urls]
+Homepage = "https://github.com/sinakane/anchorline"
+Issues = "https://github.com/sinakane/anchorline/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+anchorline = ["resources/*.txt", "resources/*.json", "resources/signatures/*.tsv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--ignore=tests/integration"

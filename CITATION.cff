@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use anchorline, please cite it as below, together with the data sources listed in the README."
+title: "anchorline: anchoring AML signatures and samples to drug-perturbed cell lines"
+type: software
+authors:
+  - family-names: Kanannejad
+    given-names: Sina
+version: 0.1.0
+date-released: 2026-11-20
+license: MIT
+repository-code: "https://github.com/sinakane/anchorline"
+keywords: [AML, drug repurposing, transcriptomics, cell lines, perturbation]
