@@ -67,6 +67,7 @@ def state_scores(R, genes, sets):
 
 def add_pseudotime(S, ref_mu=None, ref_sd=None, temp=1.0):
     Z = (S - (S.mean() if ref_mu is None else ref_mu)) / (S.std() if ref_sd is None else ref_sd)
+    Z = Z[list(STATES)]          # pandas aligns on labels and may reorder columns: put them back in axis order
     W = np.exp(Z.values / temp)
     W = W / W.sum(1, keepdims=True)
     S = S.copy()

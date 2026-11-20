@@ -98,10 +98,13 @@ $$\text{GMP}\rightarrow\text{myeloid} = \tfrac12(S_\text{ProMono} + S_\text{Mono
     ("code", """
 import numpy as np
 from anchorline._core import STATES, state_scores, add_pseudotime
-s0 = atlas.ctrl[:5]                                       # recompute pseudotime for 5 untreated samples
+s0 = atlas.ctrl[np.isfinite(atlas.controls.pseudotime.values)][:5]   # 5 untreated samples (52 have no score)
 S = add_pseudotime(state_scores(atlas.R[s0], atlas.genes, atlas.sets), atlas.mu, atlas.sd)
 check = pd.DataFrame({"recomputed": S.pseudotime.values, "stored": atlas.obs.pseudotime.values[s0]})
 print("pseudotime recomputed == stored:", np.allclose(check.recomputed, check.stored, atol=1e-3))
+S_all = add_pseudotime(state_scores(atlas.R, atlas.genes, atlas.sets), atlas.mu, atlas.sd)
+print("... and for all", len(S_all), "reference samples:",
+      np.allclose(S_all.pseudotime.values, atlas.obs.pseudotime.values, atol=1e-3, equal_nan=True))
 check.round(3)
 """),
     ("md", r"""
@@ -117,9 +120,9 @@ Genes missing from the reference are skipped.
 sig = al.sig.get("Umeda2024_KMT2Ar_high")
 mt = al.tl.match(atlas, sig)
 ui = [atlas.gi[x] for x in mt.up]; di = [atlas.gi[x] for x in mt.down]
-m_hand = atlas.Rc[:, ui].mean(1) - atlas.Rc[:, di].mean(1)           # all untreated samples
+m_hand = np.nanmean(atlas.Rc[:, ui], 1) - np.nanmean(atlas.Rc[:, di], 1)   # all untreated samples (NaN = gene not measured)
 m_hand = pd.Series(m_hand, index=atlas.controls.index).loc[mt.samples.index]
-print("signature score by hand == package:", np.allclose(m_hand.values, mt.samples.score.values, atol=1e-5))
+print("signature score by hand == package:", np.allclose(m_hand.values, mt.samples.score.values, atol=1e-5, equal_nan=True))
 """),
     ("md", r"""
 ## Step 2b: matching a patient sample
