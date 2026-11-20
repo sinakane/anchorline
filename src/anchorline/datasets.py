@@ -7,9 +7,9 @@
 
 Terminal:  anchorline-download [atlas|demo|all] [--dir PATH] [--force]
 
-Files are GitHub release assets of sinakane/anchorline (tag in resources/datasets.json), checked by SHA-256.
-While the repository is private, a GitHub token is needed: $GITHUB_TOKEN / $GH_TOKEN, else `gh auth token`
-(set $GH_CONFIG_DIR if your gh config is not in the default place).
+Files are public GitHub release assets of sinakane/anchorline (tag in resources/datasets.json), checked by
+SHA-256. No login is needed; if $GITHUB_TOKEN / $GH_TOKEN or a `gh` login is present it is used (higher API rate
+limit).
 """
 from __future__ import annotations
 

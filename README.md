@@ -53,8 +53,6 @@ anchorline-download            # or: python -c "import anchorline as al; al.data
 - **Demo data:** the example notebooks also need the BeatAML demo data (13 MB): `anchorline-download demo`, or `anchorline-download all` for everything.
 - **Data folder:** to keep the data somewhere else, set `export ANCHORLINE_DATA=/path/to/folder` or `al.settings.data_dir = "/path"` in Python.
 
-> **Private repository (current status):** installing and downloading need GitHub access. `pip` uses your git credentials. The downloader uses `$GITHUB_TOKEN` / `$GH_TOKEN`, or the token from `gh auth login` (set `GH_CONFIG_DIR` if your gh config is not in the default place). Once the repository is public, no token is needed.
-
 Optional extras: `pip install "anchorline[labels]"` (non-overlapping labels via adjustText) and `"anchorline[notebooks]"`.
 
 ## Quick start
